@@ -14,7 +14,7 @@ Second, summarize your results concisely. Make use of subheaders where appropria
 
 ## Repository overview
 
-Provide an overview of the directory structure and files.
+Repository will be enhanced once files are added to the document. 
 
 ## Running instructions
 
@@ -25,5 +25,7 @@ Explain to potential users how to run/replicate your workflow. Touch upon, if ne
 Point interested users to any related literature and/or documentation.
 
 ## About
+
+This repositiory has been created by Robbin de Waal, Efe Kiremitci, Niels, Xenia and Bram. This repository serves as an assignment for the course data prepration and workflow management at Tilburg University. 
 
 Explain who has contributed to the repository. You can say it has been part of a class you've taken at Tilburg University.
