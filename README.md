@@ -1,6 +1,6 @@
 # Which national holiday pays-off the most
 
-To what extent does kingsday, affect supply, demand and prices of the AirBnBs in the Amsterdam area.
+Which national holiday (kingsday vs. Octoberfest), affect supply, demand and prices of the AirBnBs in Amsterdam and Munich most.
 
 ## Motivation
 
