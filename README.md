@@ -17,15 +17,14 @@ Second, summarize your results concisely. Make use of subheaders where appropria
 Repository will be enhanced once files are added to the document. 
 
 ## Running instructions
+(Improve once we actually start on this thing)
 
 Explain to potential users how to run/replicate your workflow. Touch upon, if necessary, the required input data, which (secret) credentials are required (and how to obtain them), which software tools are needed to run the workflow (including links to the installation instructions), and how to run the workflow. Make use of subheaders where appropriate.
 
 ## More resources
 
-Point interested users to any related literature and/or documentation.
+View the source files _here_ (insert link)
 
 ## About
 
 This repositiory has been created by Robbin de Waal, Efe Kiremitci, Niels, Xenia and Bram. This repository serves as an assignment for the course data prepration and workflow management at Tilburg University. 
-
-Explain who has contributed to the repository. You can say it has been part of a class you've taken at Tilburg University.
