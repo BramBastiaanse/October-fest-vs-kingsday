@@ -1,11 +1,6 @@
-# TIU-dprep
-Public repository for the dPREP course
+# Which national holiday pays-off the most
 
-For this project, team number 7 would like to investigate: How do market prices respond to changes in during festive periods (e.g. Kingsday or Christmas market)?
-
-# Short project title
-
-__Long project title, e.g., research question__
+To what extent does kingsday, affect supply, demand and prices of the AirBnBs in the Amsterdam area.
 
 ## Motivation
 
