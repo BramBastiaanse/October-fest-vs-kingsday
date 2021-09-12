@@ -27,6 +27,6 @@ View the source files _here_ (insert link)
 
 ## About
 
-This repositiory has been created by Robbin de Waal, Efe Kiremitci, Niels, Xenia and Bram. This repository serves as an assignment for the course data prepration and workflow management at Tilburg University. Test
+This repositiory has been created by Robbin de Waal, Efe Kiremitci, Niels, Xenia and Bram. This repository serves as an assignment for the course data prepration and workflow management at Tilburg University.
 
 
