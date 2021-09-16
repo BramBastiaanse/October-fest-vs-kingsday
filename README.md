@@ -1,4 +1,4 @@
-# Which national holiday pays-off the most
+# Which national holiday pays-off the most?
 
 Which national holiday (kingsday vs. Octoberfest), affect supply, demand and prices of the AirBnBs in Amsterdam and Munich most.
 
