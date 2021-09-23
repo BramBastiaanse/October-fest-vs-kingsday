@@ -23,4 +23,3 @@ View(singapore_listing)
 Singapore_calendar <- fread("http://data.insideairbnb.com/singapore/sg/singapore/2021-07-19/data/calendar.csv.gz")
 View(Singapore_calendar)
 
-#test 
