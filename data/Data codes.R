@@ -1,7 +1,7 @@
 # Install required packages
 library(data.table)
 install.packages("R.utils")
-library(r.utils)
+library(R.utils)
 
 # Getting data for Shanghai and Singapore
 ## Shanghai
@@ -39,8 +39,16 @@ View(singapore_total1)
 
 
 #delete rows from shaghai_total that dont match with shaghai_calendar by 'id'
-unwanted <-which(!rownames(Shanghai_total) %in% rownames(shaghai_calendar))    
-environment2<-shanghain_total[-unwanted,]
+unwanted <-which(!rownames(Shanghai_total) %in% rownames(shanghai_calendar))    
+environment2<-Shanghai_total[-unwanted,]
 
-unwanted <-which(!rownames(Shanghai_total) %in% rownames(shaghai_calendar))    
-environment2<-shanghain_total[-unwanted,]
+unwanted <-which(!rownames(Shanghai_total) %in% rownames(shanghai_calendar))    
+environment2<-Shanghai_total[-unwanted,]
+
+library(dplyr)
+
+singapore_grandprix <- singapore_total1 %>%
+                        filter(date >= "2022-04-22" & date <= "2022-04-24")
+
+shanghai_grandprix <- shanghai_total1 %>%
+                        filter(date >= "2022-04-22" & date <= "2022-04-24")
