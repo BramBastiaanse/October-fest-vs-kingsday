@@ -2,6 +2,7 @@
 library(data.table)
 install.packages("R.utils")
 library(R.utils)
+library(dplyr)
 
 # Getting data for Shanghai and Singapore
 ## Shanghai
@@ -29,13 +30,19 @@ colnames(shanghai_calendar)[colnames(shanghai_calendar) == "listing_id"] <- 'id'
 
 colnames(Singapore_calendar)[colnames(Singapore_calendar) == "listing_id"] <- 'id'
 
-
 #Merge _calendar with _total based on 'id'
 shanghai_total1 <- merge(Shanghai_total, shanghai_calendar, by ='id')
 singapore_total1 <- merge(singapore_total, Singapore_calendar, by ='id')
 
 View(shanghai_total1)
 View(singapore_total1)
+
+# Create new datasets filtered on event date
+singapore_grandprix <- singapore_total1 %>%
+  filter(date >= "2022-04-22" & date <= "2022-04-24")
+
+shanghai_grandprix <- shanghai_total1 %>%
+  filter(date >= "2022-04-22" & date <= "2022-04-24")
 
 
 #delete rows from shaghai_total that dont match with shaghai_calendar by 'id'
@@ -45,10 +52,3 @@ environment2<-Shanghai_total[-unwanted,]
 unwanted <-which(!rownames(Shanghai_total) %in% rownames(shanghai_calendar))    
 environment2<-Shanghai_total[-unwanted,]
 
-library(dplyr)
-
-singapore_grandprix <- singapore_total1 %>%
-                        filter(date >= "2022-04-22" & date <= "2022-04-24")
-
-shanghai_grandprix <- shanghai_total1 %>%
-                        filter(date >= "2022-04-22" & date <= "2022-04-24")
