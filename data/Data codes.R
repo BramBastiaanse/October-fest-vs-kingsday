@@ -1,4 +1,9 @@
 # Getting data for Shanghai and Singapore
+library(data.table)
+install.packages("R.utils")
+library(R.utils)
+library(dplyr)
+
 ## Shanghai
 # Listings
 shanghai_listing <- read.csv("http://data.insideairbnb.com/china/shanghai/shanghai/2021-07-31/visualisations/listings.csv")
