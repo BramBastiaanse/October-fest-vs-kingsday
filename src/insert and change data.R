@@ -5,34 +5,36 @@ install.packages("R.utils")
 library(R.utils)
 library(dplyr)
 
-# Getting data for Shanghai and Singapore
+## Getting data for Shanghai and Spain ##
 ## Shanghai
 # Listings
 shanghai_listing <- read.csv("http://data.insideairbnb.com/china/shanghai/shanghai/2021-07-31/visualisations/listings.csv")
-
 # Calendar
 shanghai_calendar <- fread("http://data.insideairbnb.com/china/shanghai/shanghai/2021-07-31/data/calendar.csv.gz")
 
-# Singapore 
+# Spain 
 # Listing
 spain_listing <-read.csv("http://data.insideairbnb.com/spain/catalonia/barcelona/2021-07-07/visualisations/listings.csv")
-
 # calendar
 spain_calendar <- fread("http://data.insideairbnb.com/spain/catalonia/barcelona/2021-07-07/data/calendar.csv.gz")
+
 
 #create subset & exclude variables
 Shanghai_total <- subset(shanghai_listing, select = -c (host_name, last_review, reviews_per_month, calculated_host_listings_count, license, neighbourhood_group, minimum_nights, number_of_reviews_ltm))
 
 spain_total <- subset(spain_listing, select = -c (host_name, last_review, reviews_per_month, calculated_host_listings_count, license, neighbourhood_group, minimum_nights, number_of_reviews_ltm))
 
+
 #rename listing_id to id
 colnames(shanghai_calendar)[colnames(shanghai_calendar) == "listing_id"] <- 'id'
 
 colnames(spain_calendar)[colnames(spain_calendar) == "listing_id"] <- 'id'
 
+
 #Merge _calendar with _total based on 'id'
 shanghai_total1 <- merge(Shanghai_total, shanghai_calendar, by ='id')
 spain_total1 <- merge(spain_total, spain_calendar, by ='id')
+
 
 # Create dummy variable based on raceweekend dates
 shanghai_total1$race_weekend <- ifelse(shanghai_total1$date == as.Date("2022-04-22") | shanghai_total1$date == as.Date("2022-04-23") | shanghai_total1$date == as.Date("2022-04-24"), 1, 0) 
