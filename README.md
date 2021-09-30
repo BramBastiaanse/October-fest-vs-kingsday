@@ -1,6 +1,6 @@
-# Which national holiday pays-off the most?
+# Which Air BnB sits on pole position? 
 
-Which national holiday (kingsday vs. Octoberfest), affect supply, demand and prices of the AirBnBs in Amsterdam and Munich most.
+Which Gran Prix (Spanish Gran Prix, or Chinese Granprix) Affect demand and prices most. 
 
 ## Motivation
 
