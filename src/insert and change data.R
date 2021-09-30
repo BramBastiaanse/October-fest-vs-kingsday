@@ -35,9 +35,6 @@ colnames(Singapore_calendar)[colnames(Singapore_calendar) == "listing_id"] <- 'i
 shanghai_total1 <- merge(Shanghai_total, shanghai_calendar, by ='id')
 singapore_total1 <- merge(singapore_total, Singapore_calendar, by ='id')
 
-# Create dummy variabe
-shanghai_total1%race_weekend <-  shanghai_total1$date >=  "2022-04-22" & shanghai_total1$date <= "2022-04-24" 
-
 # Create dummy variable based on raceweekend dates
 shanghai_total1$race_weekend <- ifelse(shanghai_total1$date == as.Date("2022-04-22") | shanghai_total1$date == as.Date("2022-04-23") | shanghai_total1$date == as.Date("2022-04-24"), 1, 0) 
 summary(shanghai_total1$race_weekend)
