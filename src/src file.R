@@ -38,22 +38,9 @@ singapore_total1 <- merge(singapore_total, Singapore_calendar, by ='id')
 # Create dummy variabe
 shanghai_total1%race_weekend <-  shanghai_total1$date >=  "2022-04-22" & shanghai_total1$date <= "2022-04-24" 
 
-
-
-# Filter the Date and create dummy variable
-shanghai_total1$race_weekend <- shanghai_total1 %>% 
-  filter(date >= "2022-04-22" & date <= "2022-04-24")
-
-as.Date(shanghai_total1$date)
-
-summary(shanghai_total1)
-
-shanghai_total1$race_weekend <- ifelse(shanghai_total1$date > as.Date("22/04/2022", format = "%M/%d/%Y") &
-                                         +shanghai_total1$date < as.Date("24/04/2022", format = "%M/%d/%Y"), 1, 0)
-
-
-View(shanghai_total1$race_weekend)
-
+# Create dummy variable based on raceweekend dates
+shanghai_total1$race_weekend <- ifelse(shanghai_total1$date == as.Date("2022-04-22") | shanghai_total1$date == as.Date("2022-04-23") | shanghai_total1$date == as.Date("2022-04-24"), 1, 0) 
+summary(shanghai_total1$race_weekend)
 
 #delete rows from shaghai_total that dont match with shaghai_calendar by 'id'
 unwanted <-which(!rownames(Shanghai_total) %in% rownames(shanghai_calendar))    
@@ -62,6 +49,8 @@ environment2<-Shanghai_total[-unwanted,]
 unwanted <-which(!rownames(Shanghai_total) %in% rownames(shanghai_calendar))    
 environment2<-Shanghai_total[-unwanted,]
 
+
+#### WE MIGHT WANT TO DELETE THIS #####
 
 # Create new datasets filtered on event date
 singapore_grandprix <- singapore_total1 %>%
