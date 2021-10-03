@@ -59,6 +59,9 @@ summary(shanghai_total1_lm1)
 shanghai_total1_lm2 <- lm(adjusted_price~number_of_reviews, shanghai_total1);
 summary(shanghai_total1_lm2)
 
+shanghai_total1_lm3 <- lm(adjusted_price ~ race_weekend, shanghai_total1);
+summary(shanghai_total1_lm3)
+
 # room type has 3 three options so we might have to create dummy for them as well
 
 
