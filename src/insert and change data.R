@@ -4,6 +4,9 @@ library(data.table)
 install.packages("R.utils")
 library(R.utils)
 library(dplyr)
+library(readr)
+library(car)
+library(ggplot2)
 
 ## Getting data for Shanghai and Spain ##
 ## Shanghai
@@ -53,14 +56,15 @@ summary(spain_total1$race_weekend)
 #- number_of_reviews#
 #- distance to circuit: we have to build 6 linear regression models without intercept - Niels is doing it
 
-shanghai_total1_lm1 <- lm(adjusted_price~ room_type, shanghai_total1);
+shanghai_total1$price.y = as.numeric(gsub("\\$", "", shanghai_total1$price.y))
+shanghai_total1$adjusted_price = as.numeric(gsub("\\$", "", shanghai_total1$adjusted_price))
+
+shanghai_total1_lm1 <- lm(adjusted_price ~ room_type, shanghai_total1);
 summary(shanghai_total1_lm1)
 
-shanghai_total1_lm2 <- lm(adjusted_price~number_of_reviews, shanghai_total1);
-summary(shanghai_total1_lm2)
+shanghai_total1_lm2 <- lm(adjusted_price~number_of_reviews, shanghai_total1); summary(shanghai_total1_lm2)
 
-shanghai_total1_lm3 <- lm(adjusted_price ~ race_weekend, shanghai_total1);
-summary(shanghai_total1_lm3)
+shanghai_total1_lm3 <- lm(price.y ~ race_weekend, shanghai_total1); summary(shanghai_total1_lm3)
 
 # room type has 3 three options so we might have to create dummy for them as well
 
@@ -68,5 +72,5 @@ summary(shanghai_total1_lm3)
 
 
 
-
+typeof(shanghai_total1$price.y1)
 
