@@ -49,19 +49,17 @@ summary(spain_total1$race_weekend)
 
 ###Linear Regression Models For Shanghai
 ##control variables
-#room_type#
-#- size of accommodation##
-#- size of the city##
-#- type host 
-#- neighbourhoods
+#room_type #size of accommodation##
 #- number_of_reviews#
-#- distance to circuit: we have to build 6 linear regression models without intercept
+#- distance to circuit: we have to build 6 linear regression models without intercept - Niels is doing it
 
 shanghai_total1_lm1 <- lm(adjusted_price~ room_type, shanghai_total1);
 summary(shanghai_total1_lm1)
 
 shanghai_total1_lm2 <- lm(adjusted_price~number_of_reviews, shanghai_total1);
 summary(shanghai_total1_lm2)
+
+# room type has 3 three options so we might have to create dummy for them as well
 
 
 
