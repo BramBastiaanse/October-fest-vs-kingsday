@@ -9,6 +9,10 @@ library(car)
 library(ggplot2)
 install.packages("geosphere")
 library(geosphere)
+install.packages("geodist")
+library(geodist)
+
+
 
 ## Getting data for Shanghai and Spain ##
 ## Shanghai
@@ -69,18 +73,15 @@ shanghai_total1_lm2 <- lm(adjusted_price~number_of_reviews, shanghai_total1); su
 
 shanghai_total1_lm3 <- lm(shanghai_total1$adjusted_price ~ race_weekend + number_of_reviews, shanghai_total1); summary(shanghai_total1_lm3)
 
-## Trying to calculate distance
+########## Trying to calculate distance
 shanghai_total1$latitude = as.numeric(shanghai_total1$latitude)
-shanghai_total1$longitude = as.numeric(shanghai_total1$longitude)
+shanghai_total1$longitude = as.numeric(shanghai_total1$longitudΩ
 
+geodist(31.3395, 121.2216, shanghai_total1$longitude, shanghai_total1$latitude, units="km")
+help("geodist")
 
-shanghai_total1$longitude %>% rowwise() %>% 
-  mutate(CTD = distHaversine(c(shanghai_total1$longitude, shanghai_total1$latitude), c(31.3395, 121.2216)))
+typeof(shanghai_total1$longitude)
 
-
-
-
-# room type has 3 three options so we might have to create dummy for them as well
 
 
 
