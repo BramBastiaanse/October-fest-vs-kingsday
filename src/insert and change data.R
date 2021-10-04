@@ -68,19 +68,25 @@ shanghai_total1$number_of_reviews = as.numeric(shanghai_total1$number_of_reviews
 
 shanghai_total1_lm1 <- lm(shanghai_total1$adjusted_price ~ race_weekend + number_of_reviews, shanghai_total1); summary(shanghai_total1_lm1)
 
-########## Trying to calculate distance
-shanghai_total1$latitude = as.numeric(shanghai_total1$latitude)
-shanghai_total1$longitude = as.numeric(shanghai_total1$longitudΩ
+# Calculate distance in kilometers f1 circuit and Airbnb's
+earth.dist <- function (long1, lat1, long2, lat2)
+{
+  rad <- pi/180
+  a1 <- lat1 * rad
+  a2 <- long1 * rad
+  b1 <- lat2 * rad
+  b2 <- long2 * rad
+  dlon <- b2 - a2
+  dlat <- b1 - a1
+  a <- (sin(dlat/2))^2 + cos(a1) * cos(b1) * (sin(dlon/2))^2
+  c <- 2 * atan2(sqrt(a), sqrt(1 - a))
+  R <- 6378.145
+  d <- R * c
+  return(d)
+}
 
-geodist(31.3395, 121.2216, shanghai_total1$longitude, shanghai_total1$latitude, units="km")
-help("geodist")
-
-typeof(shanghai_total1$longitude)
+#create column with distance in km 
+shanghai_listing$distance <- earth.dist(shanghai_listing$longitude, shanghai_listing$latitude, 121.218499126, 31.33666532)
 
 
-
-
-
-
-typeof(shanghai_total1$price.y1)
 
