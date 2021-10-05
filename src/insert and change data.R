@@ -14,7 +14,8 @@ library(geodist)
 
 
 
-## Getting data for Shanghai and Spain ##
+## INPUT ##
+
 ## Shanghai
 # Listings
 shanghai_listing <- read.csv("http://data.insideairbnb.com/china/shanghai/shanghai/2021-07-31/visualisations/listings.csv")
@@ -30,6 +31,8 @@ View(spain_listing)
 # calendar
 spain_calendar <- fread("http://data.insideairbnb.com/spain/catalonia/barcelona/2021-07-07/data/calendar.csv.gz")
 View(spain_calendar)
+
+## TRANSFORMATION ##
 
 #create subset & exclude variables
 Shanghai_total <- subset(shanghai_listing, select = -c (host_name, last_review, reviews_per_month, calculated_host_listings_count, license, neighbourhood_group, minimum_nights, number_of_reviews_ltm))
@@ -56,7 +59,10 @@ summary(shanghai_total1$race_weekend)
 spain_total1$race_weekend <- ifelse(spain_total1$date == as.Date("2022-05-20") | spain_total1$date == as.Date("2022-05-21") | spain_total1$date == as.Date("2022-05-22"), 1, 0) 
 summary(spain_total1$race_weekend)
 
-###Linear Regression Models For Shanghai
+
+## Output ## 
+
+#Linear Regression Models For Shanghai
 ##control variables
 #room_type #size of accommodation##
 #- number_of_reviews#
@@ -87,8 +93,4 @@ shanghai_total1$number_of_reviews = as.numeric(shanghai_total1$number_of_reviews
 shanghai_total1$distance = as.numeric(shanghai_total1$distance)
 
 shanghai_total1_lm1 <- lm(shanghai_total1$adjusted_price ~ race_weekend + distance, shanghai_total1); summary(shanghai_total1_lm1)
-
-
-typeof(shanghai_total1$distance)
-
 
