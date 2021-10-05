@@ -84,10 +84,11 @@ shanghai_total1$distance <- earth.dist(shanghai_total1$longitude, shanghai_total
 shanghai_total1$price.y = as.numeric(gsub("\\$", "", shanghai_total1$price.y))
 shanghai_total1$adjusted_price = as.numeric(gsub("\\$", "", shanghai_total1$adjusted_price))
 shanghai_total1$number_of_reviews = as.numeric(shanghai_total1$number_of_reviews)
+shanghai_total1$distance = as.numeric(shanghai_total1$distance)
 
 shanghai_total1_lm1 <- lm(shanghai_total1$adjusted_price ~ race_weekend + distance, shanghai_total1); summary(shanghai_total1_lm1)
 
 
-
+typeof(shanghai_total1$distance)
 
 
