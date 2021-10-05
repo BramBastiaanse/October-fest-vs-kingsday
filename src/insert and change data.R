@@ -92,5 +92,19 @@ shanghai_total1$adjusted_price = as.numeric(gsub("\\$", "", shanghai_total1$adju
 shanghai_total1$number_of_reviews = as.numeric(shanghai_total1$number_of_reviews)
 shanghai_total1$distance = as.numeric(shanghai_total1$distance)
 
-shanghai_total1_lm1 <- lm(shanghai_total1$adjusted_price ~ race_weekend + distance, shanghai_total1); summary(shanghai_total1_lm1)
+shanghai_total1_lm1 <- lm(shanghai_total1$adjusted_price ~ race_weekend + distance, shanghai_total1)
+summary(shanghai_total1_lm1)
+
+spain_total1$adjprice_corrected <- gsub('[.].*', '', spain_total1$adjusted_price)
+spain_total1$adjprice_corrected <- gsub('[,]', '', spain_total1$adjprice_corrected)
+spain_total1$adjprice_corrected <- gsub('[$]', '', spain_total1$adjprice_corrected)
+spain_total1$adjprice_corrected <- as.numeric(spain_total1$adjprice_corrected)
+
+
+
+
+spain_total1_lm1 <- lm(adjusted_price ~ race_weekend, data = spain_total1)
+
+summary(spain_total1_lm1)
+
 
