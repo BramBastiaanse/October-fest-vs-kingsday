@@ -102,6 +102,5 @@ spain_total1$adjprice_corrected <- as.numeric(spain_total1$adjprice_corrected)
 
 spain_total1_lm1 <- lm(adjusted_price ~ race_weekend, data = spain_total1)
 
-summary(spain_total1_lm1)
 
 
