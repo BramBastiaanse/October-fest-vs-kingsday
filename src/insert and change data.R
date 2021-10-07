@@ -12,9 +12,7 @@ library(geosphere)
 install.packages("geodist")
 library(geodist)
 
-
-
-## INPUT ##
+## INPUT ###
 
 ## Shanghai
 # Listings
@@ -59,7 +57,6 @@ summary(shanghai_total1$race_weekend)
 spain_total1$race_weekend <- ifelse(spain_total1$date == as.Date("2022-05-20") | spain_total1$date == as.Date("2022-05-21") | spain_total1$date == as.Date("2022-05-22"), 1, 0) 
 summary(spain_total1$race_weekend)
 
-
 ## Output ## 
 
 #Linear Regression Models For Shanghai
@@ -67,7 +64,7 @@ summary(spain_total1$race_weekend)
 #room_type #size of accommodation##
 #- number_of_reviews#
 #- distance to circuit: we have to build 6 linear regression models without intercept
-# Calculate distance in kilometers f1 circuit and Airbnb's
+# Calculate distance in kilometers f1 circuit and Airbnb's (formula from Conservation Ecology)
 earth.dist <- function (long1, lat1, long2, lat2)
 {
   rad <- pi/180
@@ -99,9 +96,6 @@ spain_total1$adjprice_corrected <- gsub('[.].*', '', spain_total1$adjusted_price
 spain_total1$adjprice_corrected <- gsub('[,]', '', spain_total1$adjprice_corrected)
 spain_total1$adjprice_corrected <- gsub('[$]', '', spain_total1$adjprice_corrected)
 spain_total1$adjprice_corrected <- as.numeric(spain_total1$adjprice_corrected)
-
-
-
 
 spain_total1_lm1 <- lm(adjusted_price ~ race_weekend, data = spain_total1)
 
