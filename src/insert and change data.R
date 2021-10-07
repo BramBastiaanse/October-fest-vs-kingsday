@@ -17,7 +17,7 @@ library(geodist)
 ## Shanghai
 # Listings
 shanghai_listing <- read.csv("http://data.insideairbnb.com/china/shanghai/shanghai/2021-07-31/visualisations/listings.csv")
-View(shanghai_listing)
+
 # Calendar
 shanghai_calendar <- fread("http://data.insideairbnb.com/china/shanghai/shanghai/2021-07-31/data/calendar.csv.gz")
 View(shanghai_calendar)
@@ -92,15 +92,17 @@ shanghai_total1$adjprice_corrected <- as.numeric(shanghai_total1$adjprice_correc
 shanghai_total1$number_of_reviews = as.numeric(shanghai_total1$number_of_reviews)
 shanghai_total1$distance = as.numeric(shanghai_total1$distance)
 
+<<<<<<< HEAD
 shanghai_total1_lm1 <- lm(shanghai_total1$adjprice_corrected  ~ race_weekend + distance, shanghai_total1)
 summary(shanghai_total1_lm1)
+=======
+>>>>>>> e769506 (removed)
 
 spain_total1$adjprice_corrected <- gsub('[.].*', '', spain_total1$adjusted_price)
 spain_total1$adjprice_corrected <- gsub('[,]', '', spain_total1$adjprice_corrected)
 spain_total1$adjprice_corrected <- gsub('[$]', '', spain_total1$adjprice_corrected)
 spain_total1$adjprice_corrected <- as.numeric(spain_total1$adjprice_corrected)
 
-spain_total1_lm1 <- lm(adjusted_price ~ race_weekend, data = spain_total1)
 
 
 
