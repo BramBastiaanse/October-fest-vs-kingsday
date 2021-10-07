@@ -2,7 +2,7 @@
 .Rhistory
 .RData
 .Ruserdata
-.RDatatmp
+.RDataTmp
 **.csv
 **.csv.gz
 .DS_Store
