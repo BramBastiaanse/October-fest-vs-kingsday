@@ -85,11 +85,14 @@ earth.dist <- function (long1, lat1, long2, lat2)
 shanghai_total1$distance <- earth.dist(shanghai_total1$longitude, shanghai_total1$latitude, 121.218499126, 31.33666532)
 
 shanghai_total1$price.y = as.numeric(gsub("\\$", "", shanghai_total1$price.y))
-shanghai_total1$adjusted_price = as.numeric(gsub("\\$", "", shanghai_total1$adjusted_price))
+shanghai_total1$adjprice_corrected <- gsub('[.].*', '', shanghai_total1$adjusted_price)
+shanghai_total1$adjprice_corrected <- gsub('[,]', '', shanghai_total1$adjprice_corrected)
+shanghai_total1$adjprice_corrected <- gsub('[$]', '', shanghai_total1$adjprice_corrected)
+shanghai_total1$adjprice_corrected <- as.numeric(shanghai_total1$adjprice_corrected)
 shanghai_total1$number_of_reviews = as.numeric(shanghai_total1$number_of_reviews)
 shanghai_total1$distance = as.numeric(shanghai_total1$distance)
 
-shanghai_total1_lm1 <- lm(shanghai_total1$adjusted_price ~ race_weekend + distance, shanghai_total1)
+shanghai_total1_lm1 <- lm(shanghai_total1$adjprice_corrected  ~ race_weekend + distance, shanghai_total1)
 summary(shanghai_total1_lm1)
 
 spain_total1$adjprice_corrected <- gsub('[.].*', '', spain_total1$adjusted_price)
