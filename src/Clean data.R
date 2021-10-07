@@ -8,6 +8,7 @@ library(car)
 library(ggplot2)
 
 
+
 ## TRANSFORMATION ##
 
 #create subset & exclude variables
@@ -28,11 +29,20 @@ shanghai_total1 <- merge(Shanghai_total, shanghai_calendar, by ='id')
 spain_total1 <- merge(spain_total, spain_calendar, by ='id')
 
 
+
 # Create dummy variable based on raceweekend dates
 shanghai_total1$race_weekend <- ifelse(shanghai_total1$date == as.Date("2022-04-22") | shanghai_total1$date == as.Date("2022-04-23") | shanghai_total1$date == as.Date("2022-04-24"), 1, 0) 
 
 spain_total1$race_weekend <- ifelse(spain_total1$date == as.Date("2022-05-20") | spain_total1$date == as.Date("2022-05-21") | spain_total1$date == as.Date("2022-05-22"), 1, 0) 
 
+
+## Output ## 
+
+#Linear Regression Models For Shanghai
+##control variables
+#room_type #size of accommodation##
+#- number_of_reviews#
+#- distance to circuit: we have to build 6 linear regression models without intercept
 # Calculate distance in kilometers f1 circuit and Airbnb's (formula from Conservation Ecology)
 earth.dist <- function (long1, lat1, long2, lat2)
 {
@@ -54,12 +64,18 @@ earth.dist <- function (long1, lat1, long2, lat2)
 shanghai_total1$distance <- earth.dist(shanghai_total1$longitude, shanghai_total1$latitude, 121.218499126, 31.33666532)
 
 
+
 shanghai_total1$adjprice_corrected <- gsub('[.].*', '', shanghai_total1$adjusted_price)
 shanghai_total1$adjprice_corrected <- gsub('[,]', '', shanghai_total1$adjprice_corrected)
 shanghai_total1$adjprice_corrected <- gsub('[$]', '', shanghai_total1$adjprice_corrected)
 shanghai_total1$adjprice_corrected <- as.numeric(shanghai_total1$adjprice_corrected)
 shanghai_total1$number_of_reviews = as.numeric(shanghai_total1$number_of_reviews)
 shanghai_total1$distance = as.numeric(shanghai_total1$distance)
+
+
+shanghai_total1_lm1 <- lm(shanghai_total1$adjprice_corrected  ~ race_weekend + distance, shanghai_total1)
+summary(shanghai_total1_lm1)
+
 
 
 spain_total1$adjprice_corrected <- gsub('[.].*', '', spain_total1$adjusted_price)
