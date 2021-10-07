@@ -12,7 +12,7 @@ library(geosphere)
 install.packages("geodist")
 library(geodist)
 
-## INPUT ###
+## INPUT ####
 
 ## Shanghai
 # Listings
