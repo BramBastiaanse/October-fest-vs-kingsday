@@ -84,6 +84,7 @@ earth.dist <- function (long1, lat1, long2, lat2)
 #create column with distance in km 
 shanghai_total1$distance <- earth.dist(shanghai_total1$longitude, shanghai_total1$latitude, 121.218499126, 31.33666532)
 
+<<<<<<< HEAD
 shanghai_total1$price.y = as.numeric(gsub("\\$", "", shanghai_total1$price.y))
 shanghai_total1$adjprice_corrected <- gsub('[.].*', '', shanghai_total1$adjusted_price)
 shanghai_total1$adjprice_corrected <- gsub('[,]', '', shanghai_total1$adjprice_corrected)
@@ -103,6 +104,8 @@ spain_total1$adjprice_corrected <- gsub('[,]', '', spain_total1$adjprice_correct
 spain_total1$adjprice_corrected <- gsub('[$]', '', spain_total1$adjprice_corrected)
 spain_total1$adjprice_corrected <- as.numeric(spain_total1$adjprice_corrected)
 
+=======
+>>>>>>> 89e825f (trying to fix some issues)
 
 
 
