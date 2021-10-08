@@ -37,9 +37,12 @@ spain_total1 <- merge(spain_total, spain_calendar, by ='id')
 
 # Create dummy variable based on raceweekend dates
 shanghai_total1$race_weekend <- ifelse(shanghai_total1$date == as.Date("2022-04-22") | shanghai_total1$date == as.Date("2022-04-23") | shanghai_total1$date == as.Date("2022-04-24"), 1, 0) 
-
 spain_total1$race_weekend <- ifelse(spain_total1$date == as.Date("2022-05-20") | spain_total1$date == as.Date("2022-05-21") | spain_total1$date == as.Date("2022-05-22"), 1, 0) 
 
+# Create dummy variable based on room type
+shanghai_total1$type_of_room <-  ifelse(shanghai_total1$room_type == 'Entire home/apt', 1, 0)
+spain_total1$ type_of_room <- ifelse(spain_total1$room_type == 'Entire home/apt', 1, 0) 
+  
 # Calculate distance in kilometers f1 circuit and Airbnb's (formula from Conservation Ecology)
 earth.dist <- function (long1, lat1, long2, lat2)
 {
@@ -59,7 +62,7 @@ earth.dist <- function (long1, lat1, long2, lat2)
 
 #create column with distance in km 
 shanghai_total1$distance <- earth.dist(shanghai_total1$longitude, shanghai_total1$latitude, 121.218499126, 31.33666532)
-
+spain_total1$distance <- earth.dist(spain_total1$longitude, spain_total1$latitude, 41.293214, 2.015898 )
 
 shanghai_total1$adjprice_corrected <- gsub('[.].*', '', shanghai_total1$adjusted_price)
 shanghai_total1$adjprice_corrected <- gsub('[,]', '', shanghai_total1$adjprice_corrected)
