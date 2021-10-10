@@ -1,7 +1,9 @@
 # Regression Models
 
-shanghai_total1_lm1 <- lm(shanghai_total1$adjprice_corrected  ~ race_weekend + distance, shanghai_total1)
-shanghai_total1_lm2 <- lm(shanghai_total1$adjprice_corrected ~ type_of_room + distance, shanghai_total1)
+shanghai_total1_lm1 <- lm(shanghai_total1$adjprice_corrected  ~ race_weekend + distance + type_of_room + distance, shanghai_total1)
+summary(shanghai_total1_lm1)
+
+shanghai_total1_lm2 <- lm(shanghai_total1$adjprice_corrected ~ shanghai_total1)
 summary(shanghai_total1_lm1)
 summary(shanghai_total1_lm2)
 
@@ -18,3 +20,4 @@ ggplot(sat, aes(x=adjprice_corrected, y=type_of_room)) +
 ggplot(sat, aes(x=adjprice_corrected, y=distance)) +
   geom_point()
 
+pdf("plot all pdf")
