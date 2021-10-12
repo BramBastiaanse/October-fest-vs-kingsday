@@ -8,14 +8,14 @@ We want to assess and investigate; how the Gran Prix locations during a Gran Pri
 
 ## Method and results
 
-First, introduce and motivate your chosen method, and explain how it contributes to solving the research question/business problem.
-In order to see the magnitude the race weekends have on price, we choose to run a linear regression. This way we can take control variables into account and create a predicted price for an Air BnB location based on their specific characteristics. These characteristiccs include a.o.; size of the AirBnB, distance to the circuit, reviews, etc. 
-
-Second, summarize your results concisely. Make use of subheaders where appropriate.
+In order to solve the our research question, we needed to compare the regression analyses of both cities during race weekends(Barcelona, Spain and Shanghai, China). Using a regression analysis, we can view whether the independent variable (race weekend) and controlvariables are significant on the rent of an AirBnB in one of the cities. 
 
 ## Repository overview
 
-Repository will be enhanced once files are added to the document. 
+Our repository contains the following folders:
+- scr
+- gen
+- data
 
 ## Running instructions
 (Improve once we actually start on this thing)
