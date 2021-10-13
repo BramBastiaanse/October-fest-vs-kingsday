@@ -4,15 +4,6 @@ library(data.table)
 library(R.utils)
 library(dplyr)
 library(readr)
-library(car)
-library(ggplot2)
-
-#Download data
-shanghai_listing <- read.csv("http://data.insideairbnb.com/china/shanghai/shanghai/2021-07-31/visualisations/listings.csv")
-shanghai_calendar <- fread("http://data.insideairbnb.com/china/shanghai/shanghai/2021-07-31/data/calendar.csv.gz")
-
-spain_listing <- read.csv("http://data.insideairbnb.com/spain/catalonia/barcelona/2021-07-07/visualisations/listings.csv")
-spain_calendar <- fread("http://data.insideairbnb.com/spain/catalonia/barcelona/2021-07-07/data/calendar.csv.gz")
 
 
 ## TRANSFORMATION ##
@@ -76,6 +67,7 @@ spain_total1$adjprice_corrected <- gsub('[.].*', '', spain_total1$adjusted_price
 spain_total1$adjprice_corrected <- gsub('[,]', '', spain_total1$adjprice_corrected)
 spain_total1$adjprice_corrected <- gsub('[$]', '', spain_total1$adjprice_corrected)
 spain_total1$adjprice_corrected <- as.numeric(spain_total1$adjprice_corrected)
+spain_total1$distance = as.numeric(spain_total1$distance)
 
 
 
