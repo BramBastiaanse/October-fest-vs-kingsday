@@ -2,7 +2,8 @@
 
 Which Gran Prix (Spanish Gran Prix, or Chinese Granprix) affect demand and prices most. 
 
-<img src="https://user-images.githubusercontent.com/83360520/137386057-910aef75-d3e4-4838-bd77-d1fab22ab3bb.png" width="1000" height="500">
+![Airbnb/F1 logo](https://user-images.githubusercontent.com/83360520/137388689-e9d3e154-86c9-4b74-8168-79e2f2d3c0e8.png)
+
 
 
 ## Motivation
