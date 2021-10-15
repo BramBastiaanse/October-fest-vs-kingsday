@@ -9,13 +9,34 @@ Which Grand Prix (Spanish Grand Prix or Chinese Grand prix) affect demand and pr
 
 We want to assess and investigate; how the Grand Prix locations during a Grand Prix weekend affects local AirBnB market (demand,supply and price) in Spain and Shanghai. Our motivation is to offer a clear understanding and picture to the landlords and to the consumers about the prices and availability of the AirBnb houses. For landlords, we like to assess the prices during these events and state a profitable period to place an ad on AirBnb. For the consumers, we like to estimate the most affordable AirBnbs during the Formula 1 events. So, both landlords and consumers will have an vision about the pricing and the availability of the AirBnbs in Spain and Shanghai during race weekends.
 
-## Data
-
-For this project, Airbnb data is used from Inside Airbnb. We use datasets with information on Airbnb listings in Singapore and Barcelona, as these are the cities where the Grand Prix' take place. 
-
 ## Method and results
 
+### Data 
+
+We downloaded the Airbnb data for this project from the [InsideAirbnb](http://insideairbnb.com/get-the-data.html) website. We use datasets with information on Airbnb listings in Singapore and Barcelona, as these are the cities where the Grand Prix' take place. 
+
+### Data preperation
+
+In R, we then excluded the variables that we considered not useful for our analysis and created a subset for both Barcelona (Spain) and Shanghai. This resulted in the following code:
+
+```
+Shanghai_total <- subset(shanghai_listing, select = -c (host_name, last_review, reviews_per_month, calculated_host_listings_count, license, neighbourhood_group, minimum_nights, number_of_reviews_ltm))
+Spain_total <- subset(spain_listing, select = -c (host_name, last_review, reviews_per_month, calculated_host_listings_count, license, neighbourhood_group, minimum_nights, number_of_reviews_ltm))
+```
+
+We then had to create dummy variables based on the raceweekend data. These dummies indicate whether the date matches the dates of the raceweekend. 
+The Shanghai Grand Prix is going to take place from the 22th of April until the 24th of April.
+The Barcelona Grand Prix is going to take place from the 20th of May until the 22th of May. 
+
+Next, we created a dummy variable on the type of room. It shows whether a listing is an entire home/apartment or not.
+
 In order to solve the our research question, we needed to compare the regression analyses of both cities during race weekends(Barcelona, Spain and Shanghai, China). Using a regression analysis, we can view whether the independent variable (race weekend) and controlvariables are significant on the rent of an AirBnB in one of the cities. 
+
+### Results
+
+> ADD RESULTS HERE
+
+
 
 ## Repository overview
 
@@ -24,24 +45,39 @@ Our repository contains the following folders:
 - gen
 - data
 
+It also contains three files:
+- .gitignore file
+- README.md file. 
+- makefile
+
 ## Running instructions
 
 ### Required software
 
-* Install [R and RStudio](https://tilburgsciencehub.com/building-blocks/configure-your-computer/statistics-and-computation/r/)
-* Install [Make](https://tilburgsciencehub.com/building-blocks/configure-your-computer/automation-and-workflows/make/)
+- Install [R and RStudio](https://tilburgsciencehub.com/building-blocks/configure-your-computer/statistics-and-computation/r/)
+- Install [Make](https://tilburgsciencehub.com/building-blocks/configure-your-computer/automation-and-workflows/make/). Make is required in order to run the automated pipeline.
+- Install additional packages:
+
+```
+install.packages("data.table")
+install.packages("R.utils")
+install.packages("dplyr")
+install.packages("readr")
+install.packages("car")
+install.packages("ggplot2")
+```
 
 ### Required data
 
-The datasets that are used in this project can be downloaded below. Make sure to download **all** of the 4 datasets. 
+The datasets that are used in this project can be downloaded below. Make sure to download **all** of the 4 datasets. These datasets can be found on [InsideAirbnb](http://insideairbnb.com/get-the-data.html). Make sure to download **all** of these 4 datasets: 
 
-#### Barcelona
-* [Barcelona Listings](http://data.insideairbnb.com/spain/catalonia/barcelona/2021-09-10/visualisations/listings.csv)
-* [Barcelona Calendar](http://data.insideairbnb.com/spain/catalonia/barcelona/2021-09-10/data/calendar.csv.gz)
+#### Barcelona data
+* *listings.csv*
+* *calendar.csv.gz* 
 
-#### Shanghai 
-* [Shanghai Listings](http://data.insideairbnb.com/china/shanghai/shanghai/2021-09-28/visualisations/listings.csv)
-* [Shanghai Calendar](http://data.insideairbnb.com/china/shanghai/shanghai/2021-09-28/data/calendar.csv.gz)
+#### Shanghai data
+* *listings.csv*
+* *calendar.csv.gz* 
 
 (Improve once we actually start on this thing)
 
@@ -49,8 +85,18 @@ Explain to potential users how to run/replicate your workflow. Touch upon, if ne
 
 ## More resources
 
+
 View the source files _here_ (insert link)
 
 ## About
 
-This repositiory has been created by Robbin de Waal, Efe Kiremitci, Niels Rahder, Xenia Tijssen and Bram Bastiaanse. This repository serves as an assignment for the course data prepration and workflow management at Tilburg University. 
+This repository serves as an assignment for the course [data prepration and workflow management](https://dprep.hannesdatta.com/) at Tilburg University. 
+
+Team members: 
+- [Robbin de Waal](https://github.com/robbindewaal)
+- [Efe Kiremitci](https://github.com/efekiremitci97) 
+- [Niels Rahder](https://github.com/NielsRahder)
+- [Xenia Tijssen](https://github.com/xeniatijssen)  
+- [Bram Bastiaanse](https://github.com/BramBastiaanse)
+
+
