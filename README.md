@@ -35,8 +35,52 @@ In order to solve the our research question, we needed to compare the regression
 ### Results
 
 > ADD RESULTS HERE
+Linear regression on price of the Spain data
+
+lm(formula = spain_total1$adjprice_corrected ~ race_weekend + 
+    distance + type_of_room + distance, data = spain_total1)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-583.7 -325.8  -64.2  -36.5 9920.8 
+
+Coefficients:
+               Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  16782.4614  2195.2898   7.645 2.09e-14 ***
+race_weekend   144.4319     5.3585  26.954  < 2e-16 ***
+distance        -2.8424     0.3736  -7.608 2.79e-14 ***
+type_of_room   359.3104     0.9711 370.012  < 2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 1208 on 6232534 degrees of freedom
+  (938 observations deleted due to missingness)
+Multiple R-squared:  0.02179,	Adjusted R-squared:  0.02179 
+F-statistic: 4.628e+04 on 3 and 6232534 DF,  p-value: < 2.2e-16
 
 
+Shanghai output 
+
+Call:
+lm(formula = shanghai_total1$adjprice_corrected ~ race_weekend + 
+    distance + type_of_room + distance, data = shanghai_total1)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+ -1814   -692   -343    -21  98515 
+
+Coefficients:
+               Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  -101.75715    2.57745 -39.480   <2e-16 ***
+race_weekend    5.45109    8.49742   0.642    0.521    
+distance       15.12729    0.05728 264.082   <2e-16 ***
+type_of_room  822.76359    1.60808 511.645   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 2407 on 9846975 degrees of freedom
+Multiple R-squared:  0.02767,	Adjusted R-squared:  0.02767 
+F-statistic: 9.341e+04 on 3 and 9846975 DF,  p-value: < 2.2e-16
 
 ## Repository overview
 
