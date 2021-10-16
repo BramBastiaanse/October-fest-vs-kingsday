@@ -113,6 +113,11 @@ F-statistic: 9.341e+04 on 3 and 9846975 DF
 p-value: < 2.2e-16
 ```
 
+Considering the output it is concluded that raceweekend has a significant effect on the price during the Spanish Gran Prix. The data indicates that when the Spanish Gran Prix is held, the price increases by 144,4319 euros. In contrast, it is conculded that when the raceweekend is held in Shanghai, it does not have a significant effect on price. Furthermore, the price increase of an AirBnB only increases by 5,45109 euros when the Shanghai Gran Prix is held.
+
+On an interesting note, the data shows that the distance between the AirBnB and a racetrack has a signifcant effect on the price of an AirBnB. This conclusion holds for both Shanghai, China, and Barcelona, Spain. Further research needs to be conducted to find an explanation for this pehnomenen, especially in the case of Shanghai, China. 
+
+
 ## Repository overview
 
 Our repository contains the following folders:
@@ -126,11 +131,25 @@ It also contains three files:
 - makefile
 
 ## Running instructions
+For those who are interested in running the data please folllow the following steps:
+1. Open and run download_data.R
+2. Open and run datapreperation.R
+3. Open and run analysis.R
+
+You will find the output in gen/output. 
+
+For those interested in replicating the analyisis with different data:
+Input:
+- Circuit coordinates
+- Grand Prix dates
+
+1. In "download_data.R" the URLs can be tranformed to the desired city which hosts a Gran Prix. 
+2. Alter the dummy variables to match the race weekend in datapreperation.R. 
+3. Alter the coordinates in datapreperation.R, where you first need to provide the longtitude, followed by the latitude. 
 
 ### Required software
 
 - Install [R and RStudio](https://tilburgsciencehub.com/building-blocks/configure-your-computer/statistics-and-computation/r/)
-- Install [Make](https://tilburgsciencehub.com/building-blocks/configure-your-computer/automation-and-workflows/make/). Make is required in order to run the automated pipeline.
 - Install additional packages:
 
 ```
@@ -144,15 +163,7 @@ install.packages("ggplot2")
 
 ### Required data
 
-The datasets that are used in this project can be downloaded below. Make sure to download **all** of the 4 datasets. These datasets can be found on [InsideAirbnb](http://insideairbnb.com/get-the-data.html). Make sure to download **all** of these 4 datasets: 
-
-#### Barcelona data
-* *listings.csv*
-* *calendar.csv.gz* 
-
-#### Shanghai data
-* *listings.csv*
-* *calendar.csv.gz* 
+The datasets that are used in this project can be downloaded [here]((http://insideairbnb.com/get-the-data.html).  
 
 (Improve once we actually start on this thing)
 
