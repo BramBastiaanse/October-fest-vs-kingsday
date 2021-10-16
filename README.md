@@ -115,7 +115,7 @@ p-value: < 2.2e-16
 
 Considering the output it is concluded that raceweekend has a significant effect on the price during the Spanish Gran Prix. The data indicates that when the Spanish Gran Prix is held, the price increases by 144,4319 euros. In contrast, it is conculded that when the raceweekend is held in Shanghai, it does not have a significant effect on price. Furthermore, the price increase of an AirBnB only increases by 5,45109 euros when the Shanghai Gran Prix is held.
 
-On an interesting note, the data shows that the distance between the AirBnB and a racetrack has a signifcant effect on the price of an AirBnB. This conclusion holds for both Shanghai, China, and Barcelona, Spain. Further research needs to be conducted to find an explanation for this pehnomenen, especially in the case of Shanghai, China. 
+On an interesting note, the data shows that the distance between the AirBnB and a racetrack has a signifcant effect on the price of an AirBnB. This conclusion holds for both Shanghai, China, and Barcelona, Spain. Further research needs to be conducted to find an explanation for this phenomenon, especially in the case of Shanghai, China. 
 
 
 ## Repository overview
