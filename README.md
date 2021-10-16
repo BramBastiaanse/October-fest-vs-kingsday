@@ -30,6 +30,26 @@ The Barcelona Grand Prix is going to take place from the 20th of May until the 2
 
 Next, we created a dummy variable on the type of room. It shows whether a listing is an entire home/apartment or not.
 
+At last, we needed to create a variable on the distance of the Airbnbs to the racing circuits. We computed the distance by running the following code: 
+
+```
+earth.dist <- function (long1, lat1, long2, lat2)
+{
+  rad <- pi/180
+  a1 <- lat1 * rad
+  a2 <- long1 * rad
+  b1 <- lat2 * rad
+  b2 <- long2 * rad
+  dlon <- b2 - a2
+  dlat <- b1 - a1
+  a <- (sin(dlat/2))^2 + cos(a1) * cos(b1) * (sin(dlon/2))^2
+  c <- 2 * atan2(sqrt(a), sqrt(1 - a))
+  R <- 6378.145
+  d <- R * c
+  return(d)
+}
+```
+
 In order to solve the our research question, we needed to compare the regression analyses of both cities during race weekends(Barcelona, Spain and Shanghai, China). Using a regression analysis, we can view whether the independent variable (race weekend) and controlvariables are significant on the rent of an AirBnB in one of the cities. 
 
 ### Results
