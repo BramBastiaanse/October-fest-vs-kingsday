@@ -71,5 +71,3 @@ spain_total1$distance = as.numeric(spain_total1$distance)
 
 
 
-
-
