@@ -75,14 +75,14 @@ _lm(formula = spain_total1$adjprice_corrected ~ race_weekend +
 |type_of_room |   359.3104 |    0.9711  | 370.012 | < 2e-16***  
 
 _Signif. codes:  0***  0.001**  0.01*  0.05‘.’  0.1 ‘’  1_
-```
-Residual standard error: 1208 on 6232534 degrees of freedom
+
+- Residual standard error: 1208 on 6232534 degrees of freedom
 _(938 observations deleted due to missingness)_
-Multiple R-squared:  0.02179
-Adjusted R-squared:  0.02179 
-F-statistic: 4.628e+04 on 3 and 6232534 DF.
-p-value: < 2.2e-16
-```
+- Multiple R-squared:  0.02179
+- Adjusted R-squared:  0.02179 
+- F-statistic: 4.628e+04 on 3 and 6232534 DF.
+- p-value: < 2.2e-16
+
 
 #### Shanghai output
 
@@ -105,13 +105,13 @@ _lm(formula = shanghai_total1$adjprice_corrected ~ race_weekend +
 |type_of_room |   822.76359 |     1.60808  | 511.645 | < 2e-16***  
 
 _Signif. codes:  0***  0.001**  0.01*  0.05‘.’  0.1 ‘’  1_
-```
-Residual standard error: 2407 on 9846975 degrees of freedom
-Multiple R-squared:  0.02767	
-Adjusted R-squared:  0.02767 
-F-statistic: 9.341e+04 on 3 and 9846975 DF 
-p-value: < 2.2e-16
-```
+
+- Residual standard error: 2407 on 9846975 degrees of freedom
+- Multiple R-squared:  0.02767	
+- Adjusted R-squared:  0.02767 
+- F-statistic: 9.341e+04 on 3 and 9846975 DF 
+- p-value: < 2.2e-16
+
 
 Considering the output it is concluded that raceweekend has a significant effect on the price during the Spanish Gran Prix. The data indicates that when the Spanish Gran Prix is held, the price increases by 144,4319 euros. In contrast, it is conculded that when the raceweekend is held in Shanghai, it does not have a significant effect on price. Furthermore, the price increase of an AirBnB only increases by 5,45109 euros when the Shanghai Gran Prix is held.
 
@@ -126,9 +126,9 @@ Our repository contains the following folders:
 - data
 
 It also contains three files:
-- .gitignore file
-- README.md file. 
-- makefile
+- .gitignore file. Contains all the files that should be ignored.
+- README.md file. File that you are currently viewing. Contains the motivation on the research project, instruction on how to run the analysis and the results of the project. 
+- makefile. Enables you to run the code automatically. 
 
 ## Running instructions
 For those who are interested in running the data please folllow the following steps:
