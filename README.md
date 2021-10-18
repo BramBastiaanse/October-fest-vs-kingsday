@@ -164,10 +164,12 @@ install.packages("ggplot2")
 ### Required data
 
 The datasets that are used in this project can be downloaded [here](http://insideairbnb.com/get-the-data.html).
+
 ## More resources
 
-
-View the source files _here_ (insert link)
+- Related literature: Haywood, J., Mayock, P., Freitag, J., Owoo, K. A., & Fiorilla, B. (2017). Airbnb & hotel performance. STR publication.
+- All Airbnbs located in Barcelona can be found by clicking this [link](http://insideairbnb.com/barcelona/)
+- All Airbnbs located in Shanghai can be found by clicking this [link](http://insideairbnb.com/shanghai/)
 
 ## About
 
